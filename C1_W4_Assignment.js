@@ -32,7 +32,8 @@ async function train() {
   model = tf.sequential({
     layers: [
       tf.layers.flatten({ inputShape: mobilenet.outputs[0].shape.slice(1) }),
-      tf.layers.dense({ units: 100, activation: "relu" }),
+      tf.layers.dense({ units: 128, activation: "relu" }),
+      tf.layers.dense({ units: 64, activation: "relu" }),
       tf.layers.dense({ units: 5, activation: "softmax" }),
     ],
   });
